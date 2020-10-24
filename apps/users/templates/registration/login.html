@@ -9,7 +9,7 @@
 
 {% block title %}{{ "ComeerceMed" }}{% endblock %}
 {% block content %}
-{% block logo %}
+    {% block logo %}
         <div class="logo">
             <img src="{% static 'img/logo.png' %}" alt="ComercialMed Logo" class="img-size-200 img-circle center" style="opacity: .8">
         </div>
@@ -17,6 +17,31 @@
             {# Mirrors block names used in _main_header.html #}
             <a href="{% block logo_href %}/{% endblock %}">{% block logo_text %}<b>Comerce</b>Med{% endblock %}</a>
         </div>
-        {% endblock %}
+    {% endblock %}
+    {% block login_form %}
+        <form action="" method="post">
+            {% csrf_token %}
+            {% if message %}
+                <p class="login-box-msg" style="color: red;">{{ message }}</p>
+            {% endif %}
+            <div class="form-group has-feedback">
+                <input name="username" class="form-control" placeholder="Nombre de usuario">
+                <span class="glyphicon glyphicon-user form-control-feedback"></span>
+            </div>
+            <div class="form-group has-feedback">
+                <input type="password" name="password" class="form-control" placeholder="Contraseña">
+                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+            </div>
+            <div class="row">
+                <div class="col-xs-8">
+                    {% block login_form_links %}
+                    {% endblock %}
+                </div>
+                <div class="col-xs-4">
+                    <button type="submit" class="btn btn-primary btn-block btn-flat">Login</button>
+                </div>
+            </div>
+        </form>
+    {% endblock login_form %}
 
 {% endblock %}
