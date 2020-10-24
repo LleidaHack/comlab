@@ -1,4 +1,7 @@
 {% extends 'adminlte/lib/_main_footer.html' %}
+{% block footer_right %}
+    <b>Versión</b> {% block version %}0.1{% endblock %}
+{% endblock %}
 {% block legal %}
     <strong>Copyright &copy; {% now "Y" %}{% if not site %}.{% endif %}
         {% if site %}
