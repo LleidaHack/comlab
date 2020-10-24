@@ -7,7 +7,12 @@ from django.contrib.auth import get_user_model
 
 class Tag(models.Model):
     name = models.CharField(max_length=25, unique=True)
-    parent = models.ForeignKey("Tag", on_delete=models.CASCADE, null=True)
+    parent = models.ForeignKey("Tag", on_delete=models.CASCADE, null=True, blank=True)
+
+    def save(self, *args, **kwargs):
+         if not self.parent:
+              self.parent = None
+         super(Tag, self).save(*args, **kwargs)
     
     def __str__(self):
         return self.name
