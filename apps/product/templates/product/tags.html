@@ -6,14 +6,14 @@
 <div class="container">
     <div class="col-xs-12" align="center">
         <div class="col-xs-12">
-            <img src="{% static 'img/logo.png' %}" alt="ComercialMed Logo" style="width:10%;">
+            <img src="{% static 'img/logo.png' %}" alt="ComLab Logo" style="width:10%;">
         </div>
         <div class="col-xs-12" style="padding-bottom: 10px;">
-            <label for="" style="font-size: 20px;">Commercial<b>MED</b></label>
+            <label for="" style="font-size: 20px;">Com<b>Lab</b></label>
         </div>
         <form class=" col-xs-12" action="{% url 'nearbytag' %}"
         method="get">
-            <input name="q" class="form-control col-xs-12" type="text" placeholder="Search"
+            <input name="q" class="form-control col-xs-12" type="text" placeholder="Buscar"
             aria-label="Search">
         </form>
     </div>
@@ -26,7 +26,7 @@
                       <h5 class="card-title">{{ product.name }}</h5>
                       <p class="card-text">{{ product.description }}</p>
                       <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal{{ product.id }}">
-                        See more
+                        Más información
                       </button>
                     </div>
                   </div>
@@ -49,11 +49,11 @@
                             {{ product.description }}
                         </div>
                         <div class="col-xs-12">
-                            Made By: <a href="{% url 'profile' product.creator.pk %}">{{ product.creator.username }}</a>
+                           Vendido por: <a href="{% url 'profile' product.creator.pk %}">{{ product.creator.username }}</a>
                         </div>
                     </div>
                     <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
                     </div>
                 </div>
                 </div>

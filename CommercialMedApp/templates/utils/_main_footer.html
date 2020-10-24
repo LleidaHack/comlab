@@ -1,9 +1,12 @@
 {% extends 'adminlte/lib/_main_footer.html' %}
+{% block footer_right %}
+    <b>Versión</b> {% block version %}0.1{% endblock %}
+{% endblock %}
 {% block legal %}
     <strong>Copyright &copy; {% now "Y" %}{% if not site %}.{% endif %}
         {% if site %}
             <a href="http://{{ site.domain }}">{{ site.name }}</a>
         {% endif %}
     </strong> 
-    <p>Made wih &#128156; by <a href="lleidahack.github.io">LleidaHack</a><p>
+    <p>Hecho con &#128156; por <a href="lleidahack.github.io">LleidaHack</a><p>
 {% endblock %}
