@@ -26,7 +26,7 @@
                       <h5 class="card-title">{{ product.name }}</h5>
                       <p class="card-text">{{ product.description }}</p>
                       <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal{{ product.id }}">
-                        See more
+                        Más información
                       </button>
                     </div>
                   </div>
@@ -49,11 +49,11 @@
                             {{ product.description }}
                         </div>
                         <div class="col-xs-12">
-                            Made By: <a href="{% url 'profile' product.creator.pk %}">{{ product.creator.username }}</a>
+                           Vendido por: <a href="{% url 'profile' product.creator.pk %}">{{ product.creator.username }}</a>
                         </div>
                     </div>
                     <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
                     </div>
                 </div>
                 </div>
